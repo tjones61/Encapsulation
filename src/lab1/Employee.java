@@ -34,6 +34,9 @@ public class Employee {
     }
 
     public void setFirstName(String firstName) {
+        if(firstName.length() < 3 || firstName.length() > 15){
+            throw new IllegalArgumentException("This is not a valid name.");
+        }
         this.firstName = firstName;
     }
 
