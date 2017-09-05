@@ -45,6 +45,9 @@ public class Employee {
     }
 
     public void setLastName(String lastName) {
+        if(lastName.length() < 3 || lastName.length() > 15){
+            throw new IllegalArgumentException("This is not a valid name.");
+        }
         this.lastName = lastName;
     }
 
@@ -53,6 +56,9 @@ public class Employee {
     }
 
     public void setSsn(String ssn) {
+        if(ssn.length() != 9){
+            throw new IllegalArgumentException("This is not a valid SSN.");
+        }
         this.ssn = ssn;
     }
 
