@@ -90,7 +90,10 @@ public class Employee {
     // allowed through validation.
     
     public void setFirstName(String firstName) {
-       this.firstName = firstName;
+        if(firstName.length() < 3 || firstName.length() > 15){
+            throw new IllegalArgumentException("This is not a valid name.");
+        }
+        this.firstName = firstName;
     }
 
     public String getLastName() {
@@ -98,7 +101,10 @@ public class Employee {
     }
 
     public void setLastName(String lastName) {
-       this.lastName = lastName;
+        if(lastName.length() < 3 || lastName.length() > 15){
+            throw new IllegalArgumentException("This is not a valid name.");
+        }
+        this.lastName = lastName;
     }
 
     public String getSsn() {
@@ -106,6 +112,9 @@ public class Employee {
     }
 
     public void setSsn(String ssn) {
+        if(ssn.length() != 9){
+            throw new IllegalArgumentException("This is not a valid SSN.");
+        }
         this.ssn = ssn;
     }
 
